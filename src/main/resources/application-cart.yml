@@ -1,0 +1,17 @@
+server:
+  servlet:
+    session:
+      timeout: 30m
+      tracking-modes: cookie
+      cookie:
+        http-only: true
+        secure: ${CART_COOKIE_SECURE:true}
+        same-site: strict
+
+spring:
+  jpa:
+    open-in-view: false
+
+cart:
+  public-origin: ${CART_PUBLIC_ORIGIN:http://localhost:8080}
+  requests-per-minute: ${CART_REQUESTS_PER_MINUTE:120}
